@@ -7,9 +7,9 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    @apply bg-midnight-950 text-slate-200 antialiased;
-  }
+ body {
+  @apply bg-surface-950 text-slate-200 antialiased;
+}
 
   ::selection {
     background-color: rgb(168 85 247 / 0.4);
