@@ -52,6 +52,7 @@ const PROJECTS = [
     tags: ['React', 'Node.js', 'PostgreSQL'],
     hue: '#1F6F5F',
     accent: '#3BBFA0',
+    
   },
   {
     title: 'Lumière Boutique',
@@ -60,6 +61,7 @@ const PROJECTS = [
     tags: ['Next.js', 'Stripe', 'Sanity CMS'],
     hue: '#1A5C4E',
     accent: '#4BDFB8',
+    link:'https://luxury-e-commerce-steel.vercel.app',
   },
   {
     title: 'Vertex Capital',
@@ -613,15 +615,19 @@ export default function App() {
 
             <div className="grid md:grid-cols-3 gap-7">
               {PROJECTS.map((proj, i) => (
-                <article key={proj.title}
-                  className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer"
-                  style={{
-                    background: 'rgba(5,15,12,0.8)',
-                    border: '1px solid rgba(75,223,184,0.08)',
-                    boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
-                    transitionDelay: `${i * 60}ms`,
-                  }}
-                >
+               <a
+
+  key={proj.title}
+
+  href={proj.link}
+
+  target="_blank"
+
+  rel="noopener noreferrer"
+
+  className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 cursor-pointer block"
+
+>
                   {/* Image area */}
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
@@ -685,7 +691,7 @@ export default function App() {
                       ))}
                     </div>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
