@@ -52,6 +52,7 @@ const PROJECTS = [
     tags: ['React', 'Node.js', 'PostgreSQL'],
     hue: '#1F6F5F',
     accent: '#3BBFA0',
+    link:'https://nexus-flow-dashboard-rust.vercel.app',
     
   },
   {
@@ -70,6 +71,7 @@ const PROJECTS = [
     tags: ['TypeScript', 'Tailwind', 'Framer Motion'],
     hue: '#0F4438',
     accent: '#2FA084',
+    link:'https://luxury-e-commerce-steel.vercel.app',
   },
 ];
 
