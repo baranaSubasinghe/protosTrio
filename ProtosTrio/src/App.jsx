@@ -53,6 +53,7 @@ const PROJECTS = [
     hue: '#1F6F5F',
     accent: '#3BBFA0',
     link:'https://nexus-flow-dashboard-rust.vercel.app',
+    image: '/dashboard.png',
     
   },
   {
@@ -62,7 +63,8 @@ const PROJECTS = [
     tags: ['Next.js', 'Stripe', 'Sanity CMS'],
     hue: '#1A5C4E',
     accent: '#4BDFB8',
-    link:'https://luxury-e-commerce-steel.vercel.app',
+    link: 'https://luxury-e-commerce-steel.vercel.app',
+    image: '/ecommerce.png',
   },
   {
     title: 'Vertex Capital',
@@ -631,9 +633,28 @@ export default function App() {
 
 >
                   {/* Image area */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                      style={{ background: `linear-gradient(135deg, ${proj.hue} 0%, #020806 100%)` }} />
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-950">
+                    {proj.image ? (
+                      <img
+                        src={proj.image}
+                        alt={`${proj.title} preview`}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+                        style={{ background: `linear-gradient(135deg, ${proj.hue} 0%, #020806 100%)` }}
+                      />
+                    )}
+
+                    <div
+                      className="absolute inset-0 transition-opacity duration-700"
+                      style={{
+                        background: proj.image
+                          ? 'linear-gradient(135deg, rgba(26,92,78,0.18) 0%, rgba(2,8,6,0.72) 100%)'
+                          : 'transparent',
+                      }}
+                    />
 
                     {/* Decorative inner frame */}
                     <div className="absolute inset-4 rounded-xl border opacity-20 group-hover:opacity-40 transition-opacity duration-500"
@@ -642,13 +663,7 @@ export default function App() {
                       style={{ borderColor: proj.accent }} />
 
                     {/* Central icon */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center opacity-30 group-hover:opacity-60 transition-all duration-500 group-hover:scale-110"
-                        style={{ background: `${proj.accent}20`, border: `1px solid ${proj.accent}40` }}
-                      >
-                        <Code2 className="w-7 h-7" style={{ color: proj.accent }} />
-                      </div>
-                    </div>
+                  
 
                     {/* Category badge */}
                     <span className="absolute top-4 left-4 px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold uppercase tracking-wider"
@@ -662,7 +677,7 @@ export default function App() {
                     </span>
 
                     {/* Gradient fade */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface-950 via-transparent to-transparent opacity-80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-950/70 via-transparent to-transparent opacity-60" />
 
                     {/* Hover link icon */}
                     <div className="absolute top-4 right-4 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0"
